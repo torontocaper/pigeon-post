@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2ugh2kfwdj55"
+path="res://.godot/imported/Retro Alarm 02.wav-04bd2b268e1262fd36e49545f5afd3fb.sample"
+
+[deps]
+
+source_file="res://assets/audio/Alarms Blip Beeps/Retro Alarm 02.wav"
+dest_files=["res://.godot/imported/Retro Alarm 02.wav-04bd2b268e1262fd36e49545f5afd3fb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

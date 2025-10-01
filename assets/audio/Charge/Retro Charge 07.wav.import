@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://13hk80hgona6"
+path="res://.godot/imported/Retro Charge 07.wav-cee677667674081b20ddafa71603073a.sample"
+
+[deps]
+
+source_file="res://assets/audio/Charge/Retro Charge 07.wav"
+dest_files=["res://.godot/imported/Retro Charge 07.wav-cee677667674081b20ddafa71603073a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

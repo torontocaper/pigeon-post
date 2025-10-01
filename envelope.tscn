@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ko4j7dcmoo8c"]
+
+[ext_resource type="Texture2D" uid="uid://b03y26e4n5umc" path="res://assets/envelope/White1.png" id="1_8o8ra"]
+[ext_resource type="Script" uid="uid://buf4fbvh3wmgk" path="res://envelope.gd" id="2_k4yme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o8ra"]
+size = Vector2(12.000015, 9.00001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4yme"]
+size = Vector2(10.000002, 7.000002)
+
+[node name="Envelope" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_k4yme")
+
+[node name="PickupArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(0, 0.5)
+scale = Vector2(0.99999887, 0.99999887)
+shape = SubResource("RectangleShape2D_8o8ra")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8o8ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_k4yme")
+debug_color = Color(0.85654294, 0.3197878, 0.47247398, 0.41960785)

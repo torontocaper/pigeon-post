@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cu7v0orpfdwr3"
+path="res://.godot/imported/Retro Electric 02.wav-37acc55b6e8c2da0a0e38fbc9f9e6eb7.sample"
+
+[deps]
+
+source_file="res://assets/audio/Electric/Retro Electric 02.wav"
+dest_files=["res://.godot/imported/Retro Electric 02.wav-37acc55b6e8c2da0a0e38fbc9f9e6eb7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
