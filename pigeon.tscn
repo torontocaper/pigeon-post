@@ -467,6 +467,7 @@ collision_mask = 2
 script = ExtResource("1_1qive")
 max_flaps = 15
 recharge_interval_ground = 0.5
+recharge_interval_air = 8.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0wniy")
@@ -504,7 +505,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 value = 100.0
-fill_mode = 1
 show_percentage = false
 
 [node name="Label" type="Label" parent="UI/MarginContainer"]

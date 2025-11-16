@@ -12,9 +12,13 @@ config_version=5
 
 config/name="Pigeon Post"
 config/description="A 2D side-scroller that puts you in control of an avian war hero. Made for Trijam #339 (\"Delivery Service\")."
+config/tags=PackedStringArray("2d", "gamejam", "platformer")
 run/main_scene="uid://dwnyen7c6mcv6"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.7411765, 0.8352941, 0.91764706, 1)
+boot_splash/image="uid://cwttiyikt4suq"
+config/icon="uid://coem2ibdot5j8"
+config/windows_native_icon="res://assets/pigeon-post-icon.ico"
 
 [display]
 

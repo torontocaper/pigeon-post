@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dwnyen7c6mcv6"]
+[gd_scene load_steps=37 format=3 uid="uid://dwnyen7c6mcv6"]
 
 [ext_resource type="Script" uid="uid://mvmpbhrt55r5" path="res://main.gd" id="1_efxa6"]
 [ext_resource type="Texture2D" uid="uid://8d3poud3f8lf" path="res://assets/city-streets/Background_03/Sky.png" id="1_ig7tw"]
@@ -12,6 +12,9 @@
 [ext_resource type="FontFile" uid="uid://gn5kfjk7d2w7" path="res://assets/fonts/Brick.otf" id="7_272bh"]
 [ext_resource type="FontFile" uid="uid://dal1gve4gv7s7" path="res://assets/fonts/Typedeer Mono Demo.ttf" id="8_5vw27"]
 [ext_resource type="FontFile" uid="uid://b6wk8pclm28y2" path="res://assets/fonts/adrip1.ttf" id="9_kek77"]
+[ext_resource type="Shader" uid="uid://52d1ifrr1dn2" path="res://film_overlay.gdshader" id="13_w48qg"]
+[ext_resource type="AudioStream" uid="uid://dffcwq2wdxrmm" path="res://assets/audio/upbeat-background-loop-casual-video-game-music-249200.wav" id="13_ycdy4"]
+[ext_resource type="Script" uid="uid://cu57ihwaodypa" path="res://film_overlay.gd" id="14_vivmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(610, 31)
@@ -72,6 +75,15 @@ normal = Vector2(-1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
 bg_color = Color(0.6, 0.6, 0.6, 0.5803922)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vivmo"]
+shader = ExtResource("13_w48qg")
+shader_parameter/time = 0.0
+shader_parameter/grain_strength = 0.10000000475
+shader_parameter/contrast = 1.0000000475
+shader_parameter/vignette_strength = 0.5
+shader_parameter/vignette_radius = 0.75
+shader_parameter/viewport_size = Vector2(1920, 1080)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_efxa6")
@@ -314,6 +326,7 @@ shape = SubResource("RectangleShape2D_lquwl")
 [node name="Pigeon" parent="." instance=ExtResource("5_lquwl")]
 z_index = 10
 position = Vector2(387, 440)
+recharge_interval_ground = 1.0
 
 [node name="Envelope" parent="." instance=ExtResource("6_7mycd")]
 position = Vector2(-587, 318)
@@ -401,19 +414,6 @@ shape = SubResource("WorldBoundaryShape2D_7mycd")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="GameTitle" type="Label" parent="UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -81.0
-offset_top = 14.0
-offset_right = 82.0
-offset_bottom = 38.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("8_5vw27")
-theme_override_font_sizes/font_size = 24
-text = "Pigeon Post"
-
 [node name="GameOver" type="CenterContainer" parent="UI"]
 unique_name_in_owner = true
 visible = false
@@ -433,3 +433,18 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("8_5vw27")
 theme_override_font_sizes/font_size = 72
 text = "Success!"
+
+[node name="FilmOverlay" type="ColorRect" parent="UI"]
+visible = false
+material = SubResource("ShaderMaterial_vivmo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_vivmo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ycdy4")
+volume_db = -6.0
+autoplay = true

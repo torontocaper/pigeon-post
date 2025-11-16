@@ -4,6 +4,7 @@ signal picked_up(by: Node)
 signal dropped_off(at: Node)
 
 var _carrier: Node = null
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func pick_up(by: Node, socket: Node2D) -> void:
 	if _carrier: return
@@ -11,6 +12,7 @@ func pick_up(by: Node, socket: Node2D) -> void:
 	freeze = true        # stop physics
 	reparent(socket, true)
 	emit_signal("picked_up", by)
+	audio_stream_player.play()
 
 func drop_to_ground(world_parent: Node, global_pos: Vector2) -> void:
 	if not _carrier: return
